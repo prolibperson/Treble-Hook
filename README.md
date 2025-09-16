@@ -74,6 +74,24 @@ int main() {
 }
 ```
 
+### Hooking Functions in DLLs Using Offsets
+
+```cpp
+#include "treble.h"
+#include <windows.h>
+
+uintptr_t dll_base = (uintptr_t)GetModuleHandle(nullptr);
+uintptr_t function_offset = 0x1234; /* example offset */
+void* target = (void*)(dll_base + function_offset);
+
+void detour_function();
+void* trampoline = nullptr;
+
+if (treble_hook::TB_create_hook(target, detour_function, &trampoline)) {
+    treble_hook::TB_enable_hook(target);
+}
+```
+
 ### Disabling and Removing Hooks
 
 ```cpp
