@@ -17,7 +17,7 @@
 
  usage:
     TB_create_hook(target_function, detour_function, &trampoline);
-	TB_loop_create_hook(target_function, detour_function, expected_bytes, expected_length, &trampoline);
+    TB_loop_create_hook(target_function, detour_function, expected_bytes, expected_length, &trampoline);
     TB_enable_hook(target_function);
     TB_disable_hook(target_function);
     TB_remove_hook(target_function);
