@@ -28,7 +28,7 @@ No additional dependencies are required beyond standard Windows libraries.
 ### Creating a Hook
 
 ```cpp
-#include "treble_hook.h"
+#include "treble.h"
 
 void target_function();
 void detour_function();
