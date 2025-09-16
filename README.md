@@ -53,7 +53,6 @@ This version waits until the target function contains the expected bytes before 
 
 ```cpp
 #include "treble.h"
-#include <cstdint>
 
 void target_function();
 void detour_function();
@@ -78,7 +77,6 @@ int main() {
 
 ```cpp
 #include "treble.h"
-#include <windows.h>
 
 uintptr_t dll_base = (uintptr_t)GetModuleHandle(nullptr);
 uintptr_t function_offset = 0x1234; /* example offset */
